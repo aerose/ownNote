@@ -70,7 +70,7 @@
 一带箭头,一对多则多指向一
 ## 复杂属性
 表示复合属性
-<img src="./pics/06/1.1复合属性.png" width="200"/>
+<img src="./pics/07/1.1复合属性.png" width="200"/>
 
 ## 弱实体集(Weak Entity Sets)
 实体集的所有属性都不足以形成主码
@@ -87,4 +87,4 @@
 ## 二元 or n元联系集
 
 # UML
-<img src="./pics/06/1.3UML.png" width="500"/>
+<img src="./pics/07/1.3UML.png" width="500"/>

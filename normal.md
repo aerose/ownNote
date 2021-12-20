@@ -24,3 +24,10 @@ git remote set-url origin git@github.com:youname/housename.git
 // 换为git@github.com
 git push -u origin master
 ```
+
+
+### 汇编
+* c：`D:\vscodeC\cfiles\draft>gcc -S 1.c`
+
+### gdb
+`gdb: 在文件夹下 gdb filename.exe -q(quiet免责声明)`
