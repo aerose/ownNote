@@ -5,7 +5,7 @@
 通过`chcp 437`更换为英语,右键标题栏,属性即可更换字体
 > 无法输入中文
 `chcp 936`换回中文
-
+持久修改: 注册表`计算机/HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor`添加`字符串值`名称`autorun`数值`chcp 437`
 ### vmware共享文件夹
 /虚拟机/设置中设置后,在`/mnt/hgfs/`中
 
