@@ -54,12 +54,14 @@ where dept_count (dept_name ) > 12
 ```
 ## 过程(procedure)
 ```
+delimiter //
 create procedure dept_count_proc (in dept_name varchar(20), out d_count integer)
 begin
     select count(*) into d_count
     from instructor
     where instructor.dept_name = dept_count_proc.dept_name
-end
+end//
+delimiter ;
 
 declare d_count integer;
 call dept_count_proc( ‘Physics’, d_count);
@@ -89,21 +91,31 @@ end repeat
 ```
 ## 条件语句
 ```
+/if
 if <bool>
     then ...;
 elseif <bool>
     then ...;
 else ...;
 end if
+
+/case
+CASE case_value
+    WHEN when_value THEN statement_list
+    [WHEN when_value THEN statement_list] ...
+    [ELSE statement_list]
+END CASE
 ```
-## 异常条件/句柄(handler)
+## 异常条件(exception condition)/句柄(handler)
+发信号通知异常条件,声明句柄处理异常条件
 ```
 declare out_of_classroom_seats condition
-declare exit handler for out_of_classroom_seats
+declare exit handler for out_of_classroom_seats /exit表示条件发生终止语句,还有continue(下一条开始执行)等
 begin
-…
-.. signal out_of_classroom_seats
+…statements
 end
+
+执行signal out_of_classroom_seats引发一个异常
 ```
 ## 外部语言过程
 用程序设计语言定义函数,过程
