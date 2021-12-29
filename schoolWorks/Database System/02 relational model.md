@@ -58,7 +58,7 @@ $π_{ID, name, salary} (instructor)$
 ## 集合差-
 r-s
 >r,s必须同元且属性域相同
-## 笛卡尔积×
+## 笛卡尔积×(Cartesian-Product)
 ![1.2笛卡尔积](./pics/02/1.2笛卡尔积.png)
 ## 更名p
 $p_x(E)$ 

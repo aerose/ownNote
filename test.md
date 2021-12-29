@@ -1,6 +1,11 @@
 [TOC]
 <font face = "Consolas">
 
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=aerose&repo=ownNote)](https://github.com/aerose/ownNote) 
+
+[![icon](https://img.shields.io/badge/test-nice%20to%20meet%20you-brightgreen)](https://github.com/aerose/ownNote)
+
 ***ctrl shift v启动***
 
 *芜湖*
@@ -16,6 +21,7 @@
 ***
 >应用
 1
+
 1
 >>应用2
 [百度](https://www.baidu.com/)
@@ -25,6 +31,20 @@
 * 列表2
 1. 列表
 2. 列表
+
+
+
+
+
+- [ ] test
+  - [x] 1
+  - [x] 2
+  - [ ] 3
+  - [ ] 4
+
+ 
+ 
+
 
 <br/>
 换行

@@ -53,7 +53,7 @@
 
 # 实体-联系图(E-R diagram)
 图形化表示数据库的全局逻辑结构
-<img src="./pics/06/1.2ER.png" width="500"/>
+<img src="./pics/07/1.2ER.png" width="500"/>
 构件 | 含义
 -|-
 分割矩形 | 实体集和属性
