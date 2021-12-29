@@ -85,7 +85,7 @@ $r1⋈r2⋈...⋈rn $
 # 其他查询优化(Additional Optimization Techniques)
 ## top-K优化
 返回排序结果时,对于某特定K值只取结果前K个
-```text
+```sql
 select * 
 from r, s
 where r.B = s.B
@@ -96,7 +96,7 @@ limit 10
 * 万圣节问题: `update R set A = 5 * A where A > 10`
 计算顺序问题
 ## 多查询优化(Multiquery Optimization)
-```text
+```sql
 Q1: select * from (r natural join t) natural join s
 Q2: select * from (r natural join u) natural join s
 ```

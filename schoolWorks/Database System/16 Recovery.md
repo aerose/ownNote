@@ -212,7 +212,6 @@ Example: insert of (key, record-id) pair (K5, RID7) into index I9
 <T1, X, 10, K5>     /Physical redo of steps in insert
 <T1, Y, 45, RID7>   /
 <T1, O1, operation-end, (delete I9, K5, RID7)>
-
 ```
 ## 有逻辑undo的事务回滚(Transaction Rollback with Logical Undo)
 <img src="./pics/16/1.1逻辑undo事务回滚.png" width="600"/>

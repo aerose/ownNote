@@ -18,7 +18,7 @@
 
 ### 游标cursor
 定义一个查询,然后用open执行查询
-```
+```sql
 EXEC SQL
     declare c cursor for
     ...;
@@ -38,7 +38,7 @@ WHERE CURRENT OF c
 
 # 函数和过程
 ## 函数(function)
-```
+```sql
 create function dept_count (dept_name varchar(20))
     returns integer
     begin
@@ -53,7 +53,7 @@ where dept_count (dept_name ) > 12
 
 ```
 ## 过程(procedure)
-```
+```sql
 delimiter //
 create procedure dept_count_proc (in dept_name varchar(20), out d_count integer)
 begin
@@ -69,7 +69,7 @@ call dept_count_proc( ‘Physics’, d_count);
 ```
 > in/out表示待赋值的参数/返回结果
 ## 循环loop
-```
+```sql
 /for
 declare n integer default 0;
 for r as
@@ -90,7 +90,7 @@ until <bool>
 end repeat
 ```
 ## 条件语句
-```
+```sql
 /if
 if <bool>
     then ...;
@@ -108,7 +108,7 @@ END CASE
 ```
 ## 异常条件(exception condition)/句柄(handler)
 发信号通知异常条件,声明句柄处理异常条件
-```
+```sql
 declare out_of_classroom_seats condition
 declare exit handler for out_of_classroom_seats /exit表示条件发生终止语句,还有continue(下一条开始执行)等
 begin
@@ -119,7 +119,7 @@ end
 ```
 ## 外部语言过程
 用程序设计语言定义函数,过程
-```
+```sql
 create procedure dept_count_proc(in dept_name varchar(20),out count integer)
 language C
 external name '/usr/avi/bin/dept_count_proc'
@@ -132,7 +132,7 @@ external name '/usr/avi/bin/dept_count'
 # 触发器(triggers)
 但对数据库作修改时自动被系统执行
 > 可用来实现完整性约束
-```
+```sql
 create trigger credits_earned after update of takes on (grade)
 referencing new row as nrow     /建立过渡变量(transition variable存储修改行的值)
 referencing old row as orow
@@ -160,7 +160,7 @@ drop trigger trigger_name
 # 递归查询(Recursive Queries)
 使用传递闭包找出所有层级中的相关单元
 `with recursive`支持有限形式的递归
-```
+```sql
 with recursive rec_prereq(course_id, prereq_id) as (
     select course_id, prereq_id
     from prereq
@@ -175,13 +175,13 @@ from rec_prereq;
 > 首先进行非递归的基查询(prereq上),然后使用递归视图的递归查询
 # 高级聚集特性(Advanced Aggregation Features)
 ## 排名(ranking)
-```
+```sql
 select ID, rank() over (order by GPA desc) as s_rank
 from student_grades
 order by s_rank
 ```
 用在查询中:
-```
+```sql
 select ID, (1 + (select count(*)
     from student_grades B
     where B.GPA > A.GPA)) as s_rank
@@ -199,7 +199,7 @@ order by s_rank;
     对行进行排序
 ## 分窗(window)
 对聚集函数over将其改为开窗函数,可对该聚集函数增加修饰,不影响其余
-```
+```sql
 select account_number, date_time,
     sum (value) over
         (partition by account_number

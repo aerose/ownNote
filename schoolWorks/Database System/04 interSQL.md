@@ -8,14 +8,14 @@
 > 视图关系并不预计算和存储,被访问时查询创建(物化视图)
 ## `creat view as`
 `create view v as <query expression>`
-```
+```sql
 create view faculty as
     select ID, name, dept_name
     from instructor;
 ```
 ## 查询中使用视图
 用视图名指代该虚关系
-```
+```sql
 create view physics_fall_2009 as
     select course.course_id, sec_id, building, room_number
     from course, section
@@ -37,7 +37,7 @@ create view physics_fall_2009_watson as
     * select只包含属性(不包含表达式,聚集,distinct)
     * 没出现在select的子句中属性可以取空值(没有not null,不为主码的一部分)
     * 查询不含group by, having
-```
+```sql
 create view history_instructors as
 select *
 from instructor
@@ -65,7 +65,7 @@ where dept_name= ’History’;
 $unique(A_1,A_2,...,A_m)$
 ## `check`
 指定一个谓词,关系中每个元组必须满足
-```
+```sql
 create table section (
     course_id varchar (8),
     sec_id varchar (8),
@@ -80,7 +80,7 @@ create table section (
 ## 参照完整性(Referential Integrity)
 一个关系中给定的属性集上的取值在另一关系的特定属性集的取值中出现
 > 如instructor关系中一个元组的department属性为'Biology',则在department关系中存在'Biology'的元组
-```
+```sql
 create table course (
 course_id char(5) primary key,
 title varchar(20),
@@ -90,7 +90,7 @@ dept_name varchar(20) references department
 * `on delete cascade`: 删除department中元组破坏了参照完整性约束,不拒绝删除对course关系作级联删除(删除所有相关元组)
 * `on update cascade`: 更新违反了也不拒绝而是将course中参照的元组相关属性改为新值
 * `set null, set default`: 置null或域的默认值
-```
+```sql
 create table course (
 ...
 dept_name varchar(20),
@@ -124,7 +124,7 @@ on update cascade,
     可通过其他类型相减得到,也可加到其他类型中
 > 可用函数:`current_date`,`current_time`,`localtime`(不带时区),`current_timestamp`,`localtimestamp`
 ## 默认值`default`
-```
+```sql
 creat table student(
 tot_cred numeric (3,0) default 0
 ```
@@ -134,7 +134,7 @@ tot_cred numeric (3,0) default 0
 ## 用户定义类型
 `create type Dollars as numeric (12,2) final;`
 就可使用该类型
-```
+```sql
 create table department (
     dept_name varchar (20),
     building varchar (15),
@@ -151,7 +151,7 @@ create table department (
   域不是强类型的(允许基本类型相容的域相互赋值)
 
 * 可check
-```
+```sql
 create domain degree_level varchar(10)
     constraint degree_level_test    /命名约束,可省略
         check (value in (’Bachelors’, ’Masters’, ’Doctorate’));
@@ -166,7 +166,7 @@ create domain degree_level varchar(10)
 * 在数据库模式上的权限:(修改关系)
     > Index(索引更改) Resources(关系创建) Alternation(属性修改) Drop(关系删除)
 ### 授予`grant`与收回`revoke`
-```
+```sql
 grant <privilege list>(具体属性)
 on <relation name or view name>
 to <user list>

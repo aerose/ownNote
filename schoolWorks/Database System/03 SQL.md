@@ -19,7 +19,7 @@
     精度至少为n的浮点
 # 基本模式
 ## 关系定义
-```
+```sql
 create table instructor (
 ID char(5),
 name varchar(20) not null,
@@ -37,7 +37,7 @@ foreign key (dept_name) references department);
 ## 更新
 ### insert
 添加
-```
+```sql
 insert into instructor
 values (‘10211’, ’Smith’, ’Biology’, 66000);
 ```
@@ -54,7 +54,7 @@ values (‘10211’, ’Smith’, ’Biology’, 66000);
 `alter table r drop A;`
 
 # 查询
-```
+```sql
 select A1,A2,...,An     /属性
 from r1,r2,...,rm       /关系
 where P                 /谓词
@@ -67,7 +67,7 @@ where P                 /谓词
     * `all` 显示不去重
         `select all dept_name`
     * `*` 指名全部属性
-        ```
+        ```sql
         select *
         from instructor
         ```
@@ -82,7 +82,7 @@ where P                 /谓词
 * `between and` <= >=
     `where salary between 90000 and 100000`
 * `as` 重命名
-    ```
+    ```sql
     select distinct T.name
     from instructor as T, instructor as S
     where T.salary > S.salary and S.dept_name = ‘Comp. Sci.’
@@ -96,13 +96,13 @@ where P                 /谓词
 '\' `定义转义字符为\
 ## order by
 排序,默认升序(desc降序,asc升序)
-```
+```sql
 select distinct name
 from instructor
 order by name desc, salary asc;
 ```
 ## 集合运算
-```
+```sql
 (select course_id from section where sem = ‘Fall’ and year = 2009)
 union
 (select course_id from section where sem = ‘Spring’ and year = 2010)
@@ -138,14 +138,14 @@ count : 计数
 `select count (*)`
 ## group by
 根据属性构造分组, 聚集函数根据组来分别操作(每个组独立聚集)
-```
+```sql
 select dept_name, avg (salary) as avg_salary
 from instructor 
 group by dept_name;
 ```
 ## having
 在分组后起作用: 对每个组使用谓词/聚集函数
-```
+```sql
 select dept_name, avg (salary)
 from instructor
 group by dept_name
@@ -155,7 +155,7 @@ having avg (salary) > 42000;    /得到平均工资超过42000的系
 ## 嵌套子查询
 ### in/not in
 测试元组是否是集合中的成员
-```
+```sql
 select distinct course_id
 from section
 where semester = ’Fall’ and year= 2009 and
@@ -164,7 +164,7 @@ from section
 where semester = ’Spring’ and year= 2010);  
 /查询同时在2009年秋和2010年春开课的课程
 ```
-```
+```sql
 select count (distinct ID)
 from takes
 where (course_id, sec_id, semester, year) in
@@ -173,7 +173,7 @@ from teaches
 where teaches.ID= 10101);
 /查询一组属性
 ```
-```
+```sql
 select distinct name
 from instructor
 where name not in ('Mozart', 'Einstein');
@@ -181,7 +181,7 @@ where name not in ('Mozart', 'Einstein');
 ```
 ### some/all
 给出集合比较,some存在成立的,all和所有成员成立
-```
+```sql
 select name
 from instructor
 where salary > some (select salary
@@ -192,7 +192,7 @@ where salary > some (select salary
 所有用all
 ### exists/ not exists
 检查是否存在元组,参数的子查询非空时return true
-```
+```sql
 select course_id
 from section as S
 where semester = ’Fall’ and year = 2009 and
@@ -205,7 +205,7 @@ exists (select *
 > 相关子查询: 外层查询的名称也可用在where的子查询中
 ### unique/ not unique
 检查是否存在重复元组,参数的子查询没有重复元组时return true
-```
+```sql
 select T.course_id
 from course as T
 where unique (select R.course_id
@@ -214,7 +214,7 @@ where unique (select R.course_id
              and R.year = 2009);
 ```
 ### from中的子查询
-```
+```sql
 select dept_name, avg_salary
 from (select dept_name, avg (salary) as avg_salary
      from instructor
@@ -222,7 +222,7 @@ from (select dept_name, avg (salary) as avg_salary
 where avg_salary > 42000;
 ```
 也可用as对子查询结果起名
-```
+```sql
 select dept_name, avg_salary
 from (select dept_name, avg (salary)
 from instructor
@@ -233,7 +233,7 @@ where avg_salary > 42000;
 `from lateral(`
 ### with
 定义临时关系(只对包含with的查询有效)
-```
+```sql
 with max_budget (value) as
     (select max(budget)
     from department)
@@ -243,7 +243,7 @@ where department.budget = max_budget.value;
 ```
 ### 标量子查询
 标量子查询(返回单个值的子查询)允许出现任何地方
-```
+```sql
 select name,
         (select count(*)
         ...) as num_instructors
@@ -252,7 +252,7 @@ from department;
 # 修改
 ## delete
 删除整个元组
-```
+```sql
 delete from instructor
 where dept_name= ’Finance’;
 ```
@@ -260,24 +260,24 @@ where dept_name= ’Finance’;
 ## insert into
 插入元组
 * 按顺序
-    ```
+    ```sql
     insert into course
             values (’CS-437’, ’Database Systems’, ’Comp. Sci.’, 4);
     ```
 * 也可指定属性
-    ```
+    ```sql
     insert into course (course_id, title, dept_name, credits)
             values (’CS-437’, ’Database Systems’, ’Comp. Sci.’, 4);
     ```
 * 查询的基础上插入元组
-    ```
+    ```sql
     insert into student
         select ID, name, dept_name, 0
         from instructor
     ```
     > 未给出属性为null
 * 必须执行完select再insert
-    ```
+    ```sql
     insert into table1 
         select * 
         from table1
@@ -285,21 +285,21 @@ where dept_name= ’Finance’;
     ```
 ## updates
 更新属性
-```
+```sql
 update instructor
     set salary = salary * 1.03
     where salary > 100000;
 ```
 ### case
 条件更新
-```
+```sql
 update instructor
 set salary = case
             when salary <= 100000 then salary * 1.05
             else salary * 1.03
             end
 ```
-```
+```sql
 where pred1 then res1
 ...
 else res0

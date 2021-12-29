@@ -51,8 +51,8 @@ B+在数据修改的情况下仍能保持性能
     * 最多容纳n个指针,最少容纳n/2
     * 指针Pi指向的子树 Ki-1 <= 搜索码值 < Ki
     > 形成叶结点上的多级稀疏索引
-```text
-Find record with search-key value V.
+```python
+#Find record with search-key value V.
 1. C=root
 2. While C is not a leaf node {
     1. Let i be least value s.t. V <= Ki
