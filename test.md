@@ -6,6 +6,8 @@
 
 [![icon](https://img.shields.io/badge/test-nice%20to%20meet%20you-brightgreen)](https://github.com/aerose/ownNote)
 
+∪ ∩ ∈ ⊆ ⊂ ⊇ ⊃ ∨ ∧ ∞ Φ
+
 ***ctrl shift v启动***
 
 *芜湖*
