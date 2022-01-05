@@ -6,7 +6,11 @@
 
 [![icon](https://img.shields.io/badge/test-nice%20to%20meet%20you-brightgreen)](https://github.com/aerose/ownNote)
 
-∪ ∩ ∈ ⊆ ⊂ ⊇ ⊃ ∨ ∧ ∞ Φ
+∪ ∩ ∈ ⊆ ⊂ ⊇ ⊃ ∨ ∧ ∞ Φ →
+阿尔法`α` 贝塔`β` 伽马`γΓ` 德尔塔`Δδ` epsilon`ε`
+rho`ρ` sigma`σΣ` lambda`λ` pai`Π`
+phi`φΦ` psi`ψ` Omega`Ωω` theta`θΘ`
+`μ` 
 
 ***ctrl shift v启动***
 
