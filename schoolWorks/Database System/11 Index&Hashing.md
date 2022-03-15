@@ -4,11 +4,11 @@
 <font face = "Consolas">
 
 # 索引概念
-* 搜索码(search key): 在文件中查找记录的属性或属性集
-* 主索引(primary index)(聚集索引(clustering)): 该文件按照该搜索码排序
-* 辅助索引(secondary index)(非聚集索引(nonclustering)): 搜索码指定的顺序和文件中记录的物理顺序不同的索引
-* 索引顺序文件(index-sequential file): 在搜索码上有聚集索引的文件
-* 索引项(index entry)(索引记录(record)): 由个搜索码和指向具有该搜索码的一条或多条记录的指针
+* **搜索码**(search key): 在文件中查找记录的属性或属性集
+* **主索引**(primary index)(**聚集索引**(clustering)): 该文件按照该搜索码排序
+* **辅助索引**(secondary index)(**非聚集索引**(nonclustering)): 搜索码指定的顺序和文件中记录的物理顺序不同的索引
+* **索引顺序文件**(index-sequential file): 在搜索码上有聚集索引的文件
+* **索引项**(index entry)(**索引记录**(record)): 由个搜索码和指向具有该搜索码的一条或多条记录的指针
 
 # 顺序索引(order indices)
 ## 稠密索引(dense)和稀疏索引(sparse)
@@ -35,10 +35,10 @@
 B+在数据修改的情况下仍能保持性能
 但B+消耗较多时间空间资源
 
-<img src="./pics/11/1.3B+.png" width="400"/>
+<img src="./pics/11/1.3B+.png" width="500"/>
 
 ## 结构
-<img src="./pics/11/1.2B+.png" width="600"/>
+<img src="./pics/11/1.2B+.png" width="800"/>
 
 多级索引,包含n-1个搜索码值K,n个指针P(非叶结点指向子节点,叶结点指向数据块),每个结点中搜索码值排序存放(`i<j,Ki<Kj`)
 > 为平衡树(根到叶结点每条路径长度相同)

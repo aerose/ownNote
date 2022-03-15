@@ -55,9 +55,9 @@ values (‘10211’, ’Smith’, ’Biology’, 66000);
 
 # 查询
 ```sql
-select A1,A2,...,An     /属性
-from r1,r2,...,rm       /关系
-where P                 /谓词
+select A1,A2,...,An     #属性
+from r1,r2,...,rm       #关系
+where P                 #谓词
 ```
 ## select
 * 关键词:
@@ -114,7 +114,9 @@ union
 ## 空值
 * 算术表达式任一输入为空: 结果为空
 * 涉及空值的比较运算: unknown(为逻辑谓词)
-    >  OR: 
+    >  T > N > F  
+    非N = N
+    OR: 
     (unknown or true) = true,
     (unknown or false) = unknown
     (unknown or unknown) = unknown
@@ -225,8 +227,8 @@ where avg_salary > 42000;
 ```sql
 select dept_name, avg_salary
 from (select dept_name, avg (salary)
-from instructor
-group by dept_name) as dept_avg (dept_name, avg_salary)
+    from instructor
+    group by dept_name) as dept_avg (dept_name, avg_salary)
 where avg_salary > 42000;
 ```
 (课外)一般不允许使用其他关变量,子查询前加lateral允许访问外层查询的属性

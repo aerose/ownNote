@@ -38,12 +38,12 @@ r2称作外码的被参照关系(referenced relation)
 过程化的关系代数,非过程化的元组关系运算和域关系演算
     > 关系代数,关系演算(元组关系演算和域关系演算)
 
-select(选择): 
- project(投影): π
- union(并): ∪
- set difference(集合差): –
- Cartesian product(笛卡尔积): ×
- rename: 
+* select(选择): σ
+* project(投影): π
+* union(并): ∪
+* set difference(集合差): –
+* Cartesian product(笛卡尔积): ×
+* rename: p
 
 # 关系运算
 ## 选择σ
@@ -68,7 +68,7 @@ $p_{x(A1,A2,...,An)}(E)$ 同时更改属性名
 笛卡尔积后保留所有共有属性相同的行
 ## 除÷
 r÷s
-r中独立项记为一个整体,包含s中的所有项的整体
+r中独立项记为一个整体,包含s中的所有相同项的整体
 ![1.3除](./pics/02/1.3除.png)
 ## 外连接
 将相应方向的关系中不匹配的元组填充空值后放入自然连接的结果

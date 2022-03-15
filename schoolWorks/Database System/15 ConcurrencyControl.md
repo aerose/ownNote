@@ -1,7 +1,8 @@
 并发控制
 
-[TOC]
+
 <font face = "Consolas">
+[TOC]
 
 > 为了保持事务的隔离性
 常用的机制有两阶段封锁和快照隔离
@@ -65,7 +66,7 @@
 ### 封锁实现
 锁管理器(lock manager): 一个过程,从事务接受消息并反馈消息
 使用锁表(lock table)为已加锁的每个数据项维护一个链表
-<img src="./pics/15/1.2锁表.png" width="300"/>
+<img src="./pics/15/1.2锁表.png" width="400"/>
 > 锁请求到达就在相应数据项的链表尾加记录
   数据未加锁就授予,加锁则等待该请求与当前持有锁相容且先前请求都授予锁
   收到解锁请求就删除对应记录,并检查随后的授权
@@ -87,9 +88,9 @@
 
 * 每当等待可能导致死锁就进行事务回滚
     * 抢占与事务回滚,Tj可通过回滚事务Ti抢占(preempted)其持有的锁.
-    为控制抢占,每个事务赋予唯一的时间戳,系统仅通过时间戳判断等待还是回滚(回滚后依旧保有原时间戳)
-        * wait-die: 抢占者年轻时等待,抢占者老时直接抢占
-        * wound-wait:相反
+        为控制抢占,每个事务赋予唯一的时间戳,系统仅通过时间戳判断等待还是回滚(回滚后依旧保有原时间戳)
+        * wait-die: 抢占者老时等待,年轻时直接回滚,后以原先时间戳继续申请
+        * wound-wait:抢占者年轻时等待,抢占者老时直接抢占
         > 都存在不必要的回滚
 * 锁超时(lock timeout): 申请锁的事务一段时间未得到授予称该事务超时,该事务回滚
     > 实现简单,效果好,但等待时间难以把握,可能出现饿死
@@ -163,7 +164,7 @@ X|F|F|F|F|F
 > 在有新的read(Q)或write(Q)执行时更新时间戳
 ## 时间戳排序协议(timestamp ordering protocol)
 保证任何有冲突的read或write操作按时间戳顺序执行
-```text
+```py
 if Ti.read(Q):
     if TS(Ti) < W-timestamp(Q): read被拒绝,Ti回滚(Ti需要读入的Q值已被覆盖)
     else: 执行read, R-timestamp(Q)=TS(Ti)
@@ -205,8 +206,8 @@ elif Ti.write(Q):
     即值`TS(Ti)=Validation(Ti)`
     >>选择Validation而不是Start为时间戳是因为在冲突频度很低的情况下期望有更快的响应时间
 * 有效性测试(validation test): 要求任何满足TS(Ti)< TS(Tj)的事务满足下列条件之一:
-    * `Finish(Ti) < Start(Tj)` (Tj在Ti开始前完成)
-    * Ti写的数据项集与Tj所读的数据项集不相交,且`Start(Tj) < finish(Ti) < validation(Tj)` (Tj的写阶段在Ti的有效性检查阶段之前完成,保证两者写不重叠)
+    * `Finish(Ti) < Start(Tj)` (Ti在Tj开始前完成)
+    * Ti写的数据项集与Tj所读的数据项集不相交,且`Start(Tj) < finish(Ti) < validation(Tj)` (Ti的写阶段在Tj的有效性检查阶段之前完成,保证两者写不重叠)
 > 自动预防级联回滚
 有效性检查中是乐观的并发控制(optimistic concurrency): 假定事务能够完成执行,最终有效
 封锁和时间戳排序是悲观的(检测到冲突即强迫事务等待或回滚)

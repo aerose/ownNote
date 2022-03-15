@@ -1,6 +1,7 @@
 中级SQL
-[TOC]
+
 <font face = "Consolas">
+[TOC]
 
 # 视图(Views)
 >上文都是在逻辑模型层操作,但让所有用户看到整个逻辑模型是不合适的,有时需要隐藏.
@@ -71,7 +72,7 @@ create table section (
     sec_id varchar (8),
     semester varchar (6),
     year numeric (4,0),
-    building varchar (15),
+    building varchar (**15),
     room_number varchar (7),
     time slot id varchar (4),
     primary key (course_id, sec_id, semester, year),
@@ -125,7 +126,7 @@ on update cascade,
 > 可用函数:`current_date`,`current_time`,`localtime`(不带时区),`current_timestamp`,`localtimestamp`
 ## 默认值`default`
 ```sql
-creat table student(
+create table student(
 tot_cred numeric (3,0) default 0
 ```
 ## 创建索引index
@@ -189,4 +190,3 @@ to <user list>
 * `restrict`: 防止级联收回
     `revoke select on department from Amit, Satoshi restrict;`
 * `cascade`: 需要级联收回(默认)
-
