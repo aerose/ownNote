@@ -8,7 +8,7 @@
 - [win防火墙](#win防火墙)
 - [line_profiler](#line_profiler)
 - [git无法连接:修改为ssh连接](#git无法连接修改为ssh连接)
-- [git使用](#git使用)
+- [git bash使用](#git-bash使用)
 - [汇编](#汇编)
 - [gdb](#gdb)
 - [MLDL conda](#mldl-conda)
