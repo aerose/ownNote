@@ -9,6 +9,7 @@
 - [line_profiler](#line_profiler)
 - [git无法连接:修改为ssh连接](#git无法连接修改为ssh连接)
 - [git bash使用](#git-bash使用)
+- [git vscode提交](#git-vscode提交)
 - [汇编](#汇编)
 - [gdb](#gdb)
 - [MLDL conda](#mldl-conda)
@@ -17,7 +18,6 @@
 - [vscode插件`Markdown Preview Enhanced`的TOC](#vscode插件markdown-preview-enhanced的toc)
 
 <!-- /code_chunk_output -->
-
 
 
 
@@ -59,6 +59,9 @@ git pull origin master  # 从远程仓库的分支上更新
 法1: 先git pull同步以下再更新
 法2: git push origin master -f 强制覆盖（可能会造成远程仓库原有代码丢失）
 ```
+
+### git vscode提交
+`暂存所有更改` `提交` 输入提交信息 `推送`
 
 ### 汇编
 * c：`D:\vscodeC\cfiles\draft>gcc -S 1.c`
