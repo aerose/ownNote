@@ -1,5 +1,24 @@
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [win控制台字体](#win控制台字体)
+- [vmware共享文件夹](#vmware共享文件夹)
+- [win防火墙](#win防火墙)
+- [line_profiler](#line_profiler)
+- [git无法连接:修改为ssh连接](#git无法连接修改为ssh连接)
+- [汇编](#汇编)
+- [gdb](#gdb)
+- [MLDL conda](#mldl-conda)
+- [Colab](#colab)
+- [pip指定版本](#pip指定版本)
+- [vscode插件`Markdown Preview Enhanced`的TOC](#vscode插件markdown-preview-enhanced的toc)
+
+<!-- /code_chunk_output -->
+
+
+
 
 ### win控制台字体
 通过`chcp 437`更换为英语,右键标题栏,属性即可更换字体
@@ -31,3 +50,23 @@ git push -u origin master
 
 ### gdb
 `gdb: 在文件夹下 gdb filename.exe -q(quiet免责声明)`
+
+### MLDL conda
+`activate school_MLDL && d: && cd D:\projects\boatCNN_vgg13 && python train.py`
+
+### Colab
+```
+!unzip "/content/drive/MyDrive/boatCNN_GoogleNet_bak.zip" -d "boatCNN_GoogleNet_bak"
+!cd /content/boatCNN_GoogleNet_bak && python dataset_processor.py
+!cd /content/boatCNN_GoogleNet_bak && python train.py
+!cp /content/boatCNN_GoogleNet_bak/weight/training_statistic.json /content/drive/MyDrive
+!cp /content/boatCNN_GoogleNet_bak/weight/GoogLeNet_best.pth /content/drive/MyDrive
+```
+
+### pip指定版本
+`pip install scikit-image==0.14.0`
+
+### vscode插件`Markdown Preview Enhanced`的TOC
+`cmd-shift-p` `Markdown Preview Enhanced: Create Toc`
+将生成的`<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+`放到行首

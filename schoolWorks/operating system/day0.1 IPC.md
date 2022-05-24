@@ -1,5 +1,28 @@
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [1 IPC(inter process communication进程间通信)](#1-ipcinter-process-communication进程间通信)
+  - [1.1 竞争条件(Race conditions)](#11-竞争条件race-conditions)
+  - [1.2 临界区(Critical Region)](#12-临界区critical-region)
+  - [1.3 互斥方案](#13-互斥方案)
+    - [1.3.1 屏蔽中断](#131-屏蔽中断)
+    - [1.3.2 锁变量](#132-锁变量)
+    - [1.3.3 严格轮换法](#133-严格轮换法)
+    - [1.3.4 Peterson解法](#134-peterson解法)
+    - [1.3.5 TSL](#135-tsl)
+    - [1.3.6 Sleep&Wakeup](#136-sleepwakeup)
+  - [1.4 改进](#14-改进)
+    - [1.4.1 信号量(Semaphore)](#141-信号量semaphore)
+      - [1.4.1.1 semaphore(信号量)//day13 三种并发编程](#1411-semaphore信号量day13-三种并发编程)
+    - [1.4.2 互斥量(mutex)](#142-互斥量mutex)
+    - [1.4.3 条件变量(Conditional Variables)](#143-条件变量conditional-variables)
+    - [1.4.4 管程(monitor)](#144-管程monitor)
+  - [1.5 消息传递(message passing)](#15-消息传递message-passing)
+  - [1.6 屏障(Barriers)](#16-屏障barriers)
+
+<!-- /code_chunk_output -->
 
 # 1 IPC(inter process communication进程间通信)
 ## 1.1 竞争条件(Race conditions)

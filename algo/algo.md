@@ -1,5 +1,14 @@
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [基础操作](#基础操作)
+  - [循环读入](#循环读入)
+- [排序(Sort)](#排序sort)
+  - [归并排序(merge)](#归并排序merge)
+
+<!-- /code_chunk_output -->
 
 ## 基础操作
 ### 循环读入

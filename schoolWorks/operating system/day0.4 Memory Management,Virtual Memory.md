@@ -1,5 +1,32 @@
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [1 内存管理(Memory Management)](#1-内存管理memory-management)
+  - [1.1 为什么需要内存管理](#11-为什么需要内存管理)
+    - [1.1.1 无存储器抽象(No Memory Abstraction)](#111-无存储器抽象no-memory-abstraction)
+      - [1.1.1.1 问题: 多进程时怎么实现](#1111-问题-多进程时怎么实现)
+      - [1.1.1.2 解决: 静态重定位(static Relocation):](#1112-解决-静态重定位static-relocation)
+    - [1.1.2 一种存储器抽象-地址空间](#112-一种存储器抽象-地址空间)
+      - [1.1.2.1 动态重定位(Dynamic Relocation):稍微解决了需要连续物理内存的问题](#1121-动态重定位dynamic-relocation稍微解决了需要连续物理内存的问题)
+      - [1.1.2.2 交换技术(swap):](#1122-交换技术swap)
+  - [1.2 空闲内存管理(Free Space Management)](#12-空闲内存管理free-space-management)
+    - [1.2.1 位图(bitmap)](#121-位图bitmap)
+    - [1.2.2 链表管理(list)](#122-链表管理list)
+    - [1.2.3 list搜索算法](#123-list搜索算法)
+  - [1.3 虚拟内存(Virtual Memory)](#13-虚拟内存virtual-memory)
+    - [1.3.1 分页(Paging)](#131-分页paging)
+    - [1.3.2 虚拟页面](#132-虚拟页面)
+    - [1.3.3 虚拟地址简单翻译](#133-虚拟地址简单翻译)
+    - [1.3.4 页表(Page Table)](#134-页表page-table)
+    - [1.3.5 加速](#135-加速)
+      - [1.3.5.1 TLB(Translation Lookaside Buffers)](#1351-tlbtranslation-lookaside-buffers)
+    - [1.3.6 削减页表大小](#136-削减页表大小)
+      - [1.3.6.1 多级页表(Multilevel Page Table)](#1361-多级页表multilevel-page-table)
+      - [1.3.6.2 倒排页表(Inverted Page Table)](#1362-倒排页表inverted-page-table)
+
+<!-- /code_chunk_output -->
 
 # 1 内存管理(Memory Management)
 

@@ -1,7 +1,43 @@
 恢复系统
 
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [故障分类](#故障分类)
+  - [事务故障(transaction failure)](#事务故障transaction-failure)
+  - [系统崩溃(system crash)](#系统崩溃system-crash)
+  - [磁盘故障(disk failure)](#磁盘故障disk-failure)
+  - [恢复算法](#恢复算法)
+- [存储器(Storage Structure)](#存储器storage-structure)
+  - [稳定存储器实现(Stable-Storage Implementation)](#稳定存储器实现stable-storage-implementation)
+  - [数据访问(Data Access)](#数据访问data-access)
+- [恢复与原子性(Recovery and Atomicity)](#恢复与原子性recovery-and-atomicity)
+  - [日志记录(Log-Based Recovery)](#日志记录log-based-recovery)
+  - [数据库立即修改(Immediate Database Modification)](#数据库立即修改immediate-database-modification)
+  - [事务提交(Transaction Commit)](#事务提交transaction-commit)
+  - [并发控制和恢复(Concurrency Control and Recovery)](#并发控制和恢复concurrency-control-and-recovery)
+  - [使用日志来重做和撤销事务(Undo and Redo Operations)](#使用日志来重做和撤销事务undo-and-redo-operations)
+  - [检查点(Checkpoints)](#检查点checkpoints)
+- [恢复算法(Recovery Algorithm)](#恢复算法recovery-algorithm)
+  - [事务回滚](#事务回滚)
+  - [系统崩溃后恢复(Recovery from failure)](#系统崩溃后恢复recovery-from-failure)
+- [缓冲区管理](#缓冲区管理)
+  - [日志记录缓冲(Log Record Buffering)](#日志记录缓冲log-record-buffering)
+  - [数据库缓冲(Database Buffering)](#数据库缓冲database-buffering)
+  - [模糊检查点(Fuzzy Checkpointing)](#模糊检查点fuzzy-checkpointing)
+- [非易失性存储器数据丢失的故障(Failure with Loss of Nonvolatile Storage)](#非易失性存储器数据丢失的故障failure-with-loss-of-nonvolatile-storage)
+- [锁的提前释放和逻辑undo操作(Recovery with Early Lock Release)](#锁的提前释放和逻辑undo操作recovery-with-early-lock-release)
+  - [逻辑操作(logical operation)](#逻辑操作logical-operation)
+  - [逻辑undo日志记录(Logical Undo Logging)](#逻辑undo日志记录logical-undo-logging)
+  - [有逻辑undo的事务回滚(Transaction Rollback with Logical Undo)](#有逻辑undo的事务回滚transaction-rollback-with-logical-undo)
+  - [有逻辑undo的故障恢复(Failure Recovery with Logical Undo)](#有逻辑undo的故障恢复failure-recovery-with-logical-undo)
+- [ARIES恢复方法](#aries恢复方法)
+  - [数据结构//](#数据结构)
+  - [恢复算法](#恢复算法-1)
+
+<!-- /code_chunk_output -->
 
 # 故障分类
 ## 事务故障(transaction failure)

@@ -1,6 +1,9 @@
-[TOC]
 <font face = "Consolas">
 
+```
+<font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+```
 
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=aerose&repo=ownNote)](https://github.com/aerose/ownNote) 
 

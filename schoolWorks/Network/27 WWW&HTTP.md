@@ -1,7 +1,25 @@
-<font face = "Consolas">
 万维网与超文本传输协议
 
-[TOC]
+<font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [体系结构](#体系结构)
+  - [客户(浏览器)](#客户浏览器)
+  - [服务器](#服务器)
+  - [同一资源定位符(URL)](#同一资源定位符url)
+  - [Cookies](#cookies)
+- [Web文档](#web文档)
+  - [静态文档(static document)](#静态文档static-document)
+  - [动态文档(dynamic document)](#动态文档dynamic-document)
+  - [活动文档(active document)](#活动文档active-document)
+- [超文本传输协议(HTTP, Hypertext Transfer Protocol)](#超文本传输协议http-hypertext-transfer-protocol)
+  - [HTTP事务](#http事务)
+    - [报文](#报文)
+
+<!-- /code_chunk_output -->
+
 
 ## 体系结构
 WWW是一个分布式的客户/服务器服务，在这种方式下，客户机用浏览器能够使用服务器提供的服务。然而，提供的服务是分布在许多称为站点的位置上

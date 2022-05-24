@@ -1,5 +1,13 @@
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [大小端法p29](#大小端法p29)
+- [指针指向地址与指针类型的取指问题p34](#指针指向地址与指针类型的取指问题p34)
+- [补码p45](#补码p45)
+
+<!-- /code_chunk_output -->
 
 ## 大小端法p29
     *  判断：c的unit， 地址强转指针查看，即

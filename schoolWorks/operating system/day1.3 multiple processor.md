@@ -1,5 +1,44 @@
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [1 多处理机系统(multiple processor systems)](#1-多处理机系统multiple-processor-systems)
+  - [1.1 三种多处理机模型](#11-三种多处理机模型)
+    - [1.1.1 共享存储器多处理机(shared memory model)](#111-共享存储器多处理机shared-memory-model)
+    - [1.1.2 消息传递型多计算机(message passing multiprocessor)](#112-消息传递型多计算机message-passing-multiprocessor)
+    - [1.1.3 广域分布式系统(wide area distributed system)](#113-广域分布式系统wide-area-distributed-system)
+  - [1.2 多处理机硬件(multiprocessor)](#12-多处理机硬件multiprocessor)
+    - [1.2.1 基于总线的UMA多处理机](#121-基于总线的uma多处理机)
+    - [1.2.2 交叉开关UMA多处理机](#122-交叉开关uma多处理机)
+    - [1.2.3 多级交换网络UMA多处理机](#123-多级交换网络uma多处理机)
+    - [1.2.4 NUMA多处理机](#124-numa多处理机)
+  - [1.3 多处理机操作系统](#13-多处理机操作系统)
+    - [1.3.1 每个CPU有自己的操作系统](#131-每个cpu有自己的操作系统)
+    - [1.3.2 主从多处理机(master-slave)](#132-主从多处理机master-slave)
+    - [1.3.3 对称多处理机SMP(symmetric multiprocessor)](#133-对称多处理机smpsymmetric-multiprocessor)
+  - [1.4 多处理机同步](#14-多处理机同步)
+    - [1.4.1 TSL](#141-tsl)
+    - [1.4.2 私有锁变量](#142-私有锁变量)
+    - [1.4.3 自旋(spinning)或切换](#143-自旋spinning或切换)
+  - [1.5 多处理机调度](#15-多处理机调度)
+    - [1.5.1 分时(timesharing)](#151-分时timesharing)
+    - [1.5.2 空间共享(space sharing)](#152-空间共享space-sharing)
+    - [1.5.3 群调度(Gang Scheduling)](#153-群调度gang-scheduling)
+  - [1.6 多计算机(multicomputers)](#16-多计算机multicomputers)
+    - [1.6.1 集群网络间发包](#161-集群网络间发包)
+    - [1.6.2 远程过程调用RPC(remote procedure call)](#162-远程过程调用rpcremote-procedure-call)
+    - [1.6.3 分布式共享内存(distributed shared memory)](#163-分布式共享内存distributed-shared-memory)
+    - [1.6.4 负载平衡(load balancing)](#164-负载平衡load-balancing)
+  - [1.7 虚拟化(Virtualization)](#17-虚拟化virtualization)
+    - [1.7.1 第一类虚拟机管理程序(type 1 hypervisor)](#171-第一类虚拟机管理程序type-1-hypervisor)
+    - [1.7.2 type 2](#172-type-2)
+  - [1.8 分布式系统(distributed system)](#18-分布式系统distributed-system)
+    - [1.8.1 基于文档的中间件(document-based middleware)](#181-基于文档的中间件document-based-middleware)
+    - [1.8.2 基于文件系统的中间件(file system based middleware)](#182-基于文件系统的中间件file-system-based-middleware)
+    - [1.8.3 基于对象的中间件(object based middleware)](#183-基于对象的中间件object-based-middleware)
+
+<!-- /code_chunk_output -->
 
 # 1 多处理机系统(multiple processor systems)
 > 为了更强的计算能力,散热和可靠性

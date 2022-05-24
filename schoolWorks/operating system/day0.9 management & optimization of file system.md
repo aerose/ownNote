@@ -1,5 +1,28 @@
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [1 file system management & optimization](#1-file-system-management-optimization)
+  - [1.1 磁盘空间管理(disk space management)](#11-磁盘空间管理disk-space-management)
+    - [1.1.1 块大小](#111-块大小)
+    - [1.1.2 空闲块管理](#112-空闲块管理)
+    - [1.1.3 磁盘块安全](#113-磁盘块安全)
+  - [1.2 文件系统可靠性(reliability)](#12-文件系统可靠性reliability)
+    - [1.2.1 备份(backup)](#121-备份backup)
+    - [1.2.2 错误恢复(consistency)](#122-错误恢复consistency)
+    - [1.2.3 性能](#123-性能)
+      - [1.2.3.1 加cache](#1231-加cache)
+      - [1.2.3.2 提前读(block read ahead)](#1232-提前读block-read-ahead)
+      - [1.2.3.3 减少磁盘臂移动(reducing disk arm motion)](#1233-减少磁盘臂移动reducing-disk-arm-motion)
+      - [1.2.3.4 减少碎片(de fragmentation)](#1234-减少碎片de-fragmentation)
+    - [1.2.4 example](#124-example)
+      - [1.2.4.1 ISO9660目录项](#1241-iso9660目录项)
+      - [1.2.4.2 MS-DOS目录项](#1242-ms-dos目录项)
+      - [1.2.4.3 UNIX V7目录项](#1243-unix-v7目录项)
+      - [1.2.4.4 UNIX V7目录查找](#1244-unix-v7目录查找)
+
+<!-- /code_chunk_output -->
 
 # 1 file system management & optimization
 > 文件系统的管理和优化

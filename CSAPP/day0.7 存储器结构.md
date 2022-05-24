@@ -1,5 +1,19 @@
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [存储器层次结构 P398](#存储器层次结构-p398)
+  - [随机访问存储器(RAM) P400](#随机访问存储器ram-p400)
+    - [DRAM](#dram)
+    - [主存访问,总线 P405](#主存访问总线-p405)
+    - [连接I/O设备 P411](#连接io设备-p411)
+    - [访问磁盘 P412](#访问磁盘-p412)
+  - [局部性](#局部性)
+  - [存储器层次结构 P421](#存储器层次结构-p421)
+  - [通用高速缓存组织 P426](#通用高速缓存组织-p426)
+
+<!-- /code_chunk_output -->
 
 # 存储器层次结构 P398
 ****

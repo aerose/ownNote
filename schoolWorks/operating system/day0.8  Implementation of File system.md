@@ -1,5 +1,25 @@
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [1 File system Implementation](#1-file-system-implementation)
+  - [1.1 文件系统(file system)](#11-文件系统file-system)
+    - [1.1.1 布局](#111-布局)
+  - [1.2 普通文件(file)](#12-普通文件file)
+    - [1.2.1 分配(allocation)](#121-分配allocation)
+      - [1.2.1.1 连续存储](#1211-连续存储)
+      - [1.2.1.2 指针存储](#1212-指针存储)
+    - [1.2.2 追踪(tracking)](#122-追踪tracking)
+      - [1.2.2.1 inode索引节点(index node)](#1221-inode索引节点index-node)
+  - [1.3 目录文件](#13-目录文件)
+    - [1.3.1 定长存储](#131-定长存储)
+    - [1.3.2 变长存储](#132-变长存储)
+  - [1.4 链接文件(Link File)](#14-链接文件link-file)
+    - [1.4.1 硬链接](#141-硬链接)
+    - [1.4.2 符号链接(symbolic linking)](#142-符号链接symbolic-linking)
+
+<!-- /code_chunk_output -->
 
 # 1 File system Implementation
 > 文件和目录如何存储,磁盘空间如何管理,系统如何工作

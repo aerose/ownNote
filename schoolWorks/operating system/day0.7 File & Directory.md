@@ -1,5 +1,27 @@
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [1 File](#1-file)
+  - [1.1 why:](#11-why)
+  - [1.2 扩展名](#12-扩展名)
+  - [1.3 文件类型(file types)](#13-文件类型file-types)
+    - [1.3.1 普通文件(regular file)](#131-普通文件regular-file)
+    - [1.3.2 非普通文件:](#132-非普通文件)
+    - [1.3.3 简单的二进制文件:可执行文件 exe & 归档文件(库文件) archive](#133-简单的二进制文件可执行文件-exe-归档文件库文件-archive)
+  - [1.4 文件访问方法(access methods)](#14-文件访问方法access-methods)
+    - [1.4.1 顺序访问(Sequential access)](#141-顺序访问sequential-access)
+    - [1.4.2 随机访问(Random access)](#142-随机访问random-access)
+  - [1.5 文件属性](#15-文件属性)
+  - [1.6 文件内部结构(File structure)](#16-文件内部结构file-structure)
+- [2 Directory](#2-directory)
+  - [2.1 单级目录(Single Level Directory)](#21-单级目录single-level-directory)
+  - [2.2 二级目录(Tow Level Directory)](#22-二级目录tow-level-directory)
+  - [2.3 多级目录(Hierarchical Directory Systems)](#23-多级目录hierarchical-directory-systems)
+  - [2.4 目录操作](#24-目录操作)
+
+<!-- /code_chunk_output -->
 
 
 # 1 File

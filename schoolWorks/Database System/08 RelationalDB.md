@@ -1,7 +1,33 @@
 关系数据库设计
 
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [原子域和第一范式](#原子域和第一范式)
+- [使用函数依赖进行分解](#使用函数依赖进行分解)
+  - [字母表示](#字母表示)
+  - [函数依赖(Functional dependence)](#函数依赖functional-dependence)
+  - [2NF](#2nf)
+  - [第三范式(3NF)](#第三范式3nf)
+  - [Boyce-Codd范式(BCNF)](#boyce-codd范式bcnf)
+- [函数依赖理论](#函数依赖理论)
+  - [函数依赖集的闭包(Closure)](#函数依赖集的闭包closure)
+  - [属性集的闭包](#属性集的闭包)
+  - [正则覆盖(Canonical Cover)](#正则覆盖canonical-cover)
+  - [无损分解(Lossless-join Decomposition)](#无损分解lossless-join-decomposition)
+  - [保持依赖(Dependency Preservation)](#保持依赖dependency-preservation)
+- [分解算法(Decomposition Algorithm)](#分解算法decomposition-algorithm)
+  - [BCNF分解](#bcnf分解)
+    - [BCNF简化判定方法](#bcnf简化判定方法)
+    - [BCNF分解算法](#bcnf分解算法)
+  - [3NF分解](#3nf分解)
+- [多值依赖(MVDs: Multivalued Dependencies)](#多值依赖mvds-multivalued-dependencies)
+- [第四范式(4NF)](#第四范式4nf)
+  - [4NF分解](#4nf分解)
+
+<!-- /code_chunk_output -->
 
 > 关系数据库设计的目标是生成一组关系模式,减少冗余方便获取信息,这是通过设计满足适当范式的模式实现的.
 

@@ -1,5 +1,17 @@
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [页面替换算法(Page Replacement Algorithms)](#页面替换算法page-replacement-algorithms)
+  - [最优(Optimal)页面替换算法](#最优optimal页面替换算法)
+  - [最不近使用(LRU)(Least Recently Used)](#最不近使用lruleast-recently-used)
+  - [Clock Page Replacement Algorithm](#clock-page-replacement-algorithm)
+  - [工作集(Working Set Page Replacement Algorithm)](#工作集working-set-page-replacement-algorithm)
+  - [FIFO Page Replacement Algorithm](#fifo-page-replacement-algorithm)
+  - [Second Chance Page Replacement Algorithm](#second-chance-page-replacement-algorithm)
+
+<!-- /code_chunk_output -->
 
 # 页面替换算法(Page Replacement Algorithms)
 > page fault: 找不到页面

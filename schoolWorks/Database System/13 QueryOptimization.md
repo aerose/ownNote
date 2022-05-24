@@ -1,7 +1,26 @@
 查询优化
 
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [概述](#概述)
+- [关系表达式的转换](#关系表达式的转换)
+  - [等价规则(Equivalence Rules)](#等价规则equivalence-rules)
+  - [等价表达式的枚举(Enumeration of Equivalent Expressions)](#等价表达式的枚举enumeration-of-equivalent-expressions)
+- [表达式结果集统计大小的估计](#表达式结果集统计大小的估计)
+- [执行计划选择(Choice of Evaluation Plans)](#执行计划选择choice-of-evaluation-plans)
+  - [基于代价的连接顺序选择(Cost-Based Optimization)](#基于代价的连接顺序选择cost-based-optimization)
+  - [采用等价规则的基于代价的优化器(Cost Based Optimization with Equivalence Rules)](#采用等价规则的基于代价的优化器cost-based-optimization-with-equivalence-rules)
+  - [启发式优化(Heuristic Optimization)](#启发式优化heuristic-optimization)
+- [其他查询优化(Additional Optimization Techniques)](#其他查询优化additional-optimization-techniques)
+  - [top-K优化](#top-k优化)
+  - [更新的优化(Optimization of Updates)](#更新的优化optimization-of-updates)
+  - [多查询优化(Multiquery Optimization)](#多查询优化multiquery-optimization)
+  - [参数化查询优化(Parametric Query Optimization)](#参数化查询优化parametric-query-optimization)
+
+<!-- /code_chunk_output -->
 
 # 概述
 每个关系运算可以有几种不同的算法(等价表达式)

@@ -1,7 +1,36 @@
 中级SQL
 
 <font face = "Consolas">
-[TOC]
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [视图(Views)](#视图views)
+  - [`creat view as`](#creat-view-as)
+  - [查询中使用视图](#查询中使用视图)
+  - [更新视图](#更新视图)
+- [事务(transaction)](#事务transaction)
+- [完整性约束(Integrity Constraints)](#完整性约束integrity-constraints)
+  - [`not null`](#not-null)
+  - [`unique`](#unique)
+  - [`check`](#check)
+  - [参照完整性(Referential Integrity)](#参照完整性referential-integrity)
+  - [事务中对完整性约束的违反](#事务中对完整性约束的违反)
+  - [复杂check与断言(assertion)](#复杂check与断言assertion)
+- [数据类型](#数据类型)
+  - [日期,时间](#日期时间)
+  - [默认值`default`](#默认值default)
+  - [创建索引index](#创建索引index)
+  - [用户定义类型](#用户定义类型)
+  - [域domain](#域domain)
+  - [大对象类型](#大对象类型)
+  - [授权](#授权)
+    - [授予`grant`与收回`revoke`](#授予grant与收回revoke)
+  - [角色role](#角色role)
+  - [视图的授权](#视图的授权)
+  - [权限相关子句](#权限相关子句)
+
+<!-- /code_chunk_output -->
 
 # 视图(Views)
 >上文都是在逻辑模型层操作,但让所有用户看到整个逻辑模型是不合适的,有时需要隐藏.

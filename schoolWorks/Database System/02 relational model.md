@@ -1,6 +1,28 @@
 关系数据库(relational model)
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [结构](#结构)
+- [码](#码)
+  - [超码(superkey)/主码(primary key)](#超码superkey主码primary-key)
+  - [外码(foreign key)](#外码foreign-key)
+- [模式图](#模式图)
+- [关系查询语言(Relational Query Languages)](#关系查询语言relational-query-languages)
+- [关系运算](#关系运算)
+  - [选择σ](#选择σ)
+  - [投影π](#投影π)
+  - [并∪](#并)
+  - [集合差-](#集合差-)
+  - [笛卡尔积×(Cartesian-Product)](#笛卡尔积cartesian-product)
+  - [更名p](#更名p)
+  - [交](#交)
+  - [自然连接⋈](#自然连接)
+  - [除÷](#除)
+  - [外连接](#外连接)
+
+<!-- /code_chunk_output -->
 
 > 这里讨论的数据库模式,关系模式(relation schema)是类似于类的概念而不是实例
 # 结构

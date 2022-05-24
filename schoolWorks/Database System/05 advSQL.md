@@ -1,7 +1,31 @@
 高级SQL
 
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [高级语言连接数据库](#高级语言连接数据库)
+  - [ODBC](#odbc)
+  - [嵌入式SQL(Embedded SQL)](#嵌入式sqlembedded-sql)
+    - [连接](#连接)
+    - [断开连接](#断开连接)
+    - [游标cursor](#游标cursor)
+    - [SQL通信区域(SQLCA)](#sql通信区域sqlca)
+- [函数和过程](#函数和过程)
+  - [函数(function)](#函数function)
+  - [过程(procedure)](#过程procedure)
+  - [循环loop](#循环loop)
+  - [条件语句](#条件语句)
+  - [异常条件(exception condition)/句柄(handler)](#异常条件exception-condition句柄handler)
+  - [外部语言过程](#外部语言过程)
+- [触发器(triggers)](#触发器triggers)
+- [递归查询(Recursive Queries)](#递归查询recursive-queries)
+- [高级聚集特性(Advanced Aggregation Features)](#高级聚集特性advanced-aggregation-features)
+  - [排名(ranking)](#排名ranking)
+  - [分窗(window)](#分窗window)
+
+<!-- /code_chunk_output -->
 
 # 高级语言连接数据库
 ## ODBC

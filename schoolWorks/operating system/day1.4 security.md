@@ -1,5 +1,38 @@
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [security](#security)
+  - [目标/威胁](#目标威胁)
+    - [数据机密性(data confidentiality)/数据泄露](#数据机密性data-confidentiality数据泄露)
+    - [数据完整性(data integrity)/数据篡改](#数据完整性data-integrity数据篡改)
+    - [系统可用性(system availability)/拒绝服务](#系统可用性system-availability拒绝服务)
+  - [内部攻击方式](#内部攻击方式)
+    - [逻辑炸弹(logic bombs)](#逻辑炸弹logic-bombs)
+    - [后门(trap doors)](#后门trap-doors)
+    - [网络钓鱼(logic spoofing)](#网络钓鱼logic-spoofing)
+    - [缓冲区溢出(buffer overflow)](#缓冲区溢出buffer-overflow)
+  - [外部攻击方式](#外部攻击方式)
+    - [恶意软件(Malware)](#恶意软件malware)
+      - [特洛伊木马(trojan horses)](#特洛伊木马trojan-horses)
+      - [病毒(virus)](#病毒virus)
+    - [蠕虫病毒(worm)](#蠕虫病毒worm)
+    - [隐蔽信道(convert channels)](#隐蔽信道convert-channels)
+  - [防护](#防护)
+    - [加密(cryptography)](#加密cryptography)
+      - [对称密钥(symmetric key)](#对称密钥symmetric-key)
+      - [公钥加密(public-key)](#公钥加密public-key)
+      - [数字签名(digital signatures)](#数字签名digital-signatures)
+    - [保护域(protection domain)](#保护域protection-domain)
+    - [用户认证(user authentication)](#用户认证user-authentication)
+    - [多级安全机制(multilevel security)](#多级安全机制multilevel-security)
+    - [强制访问控制MAC(mandatory access controls)](#强制访问控制macmandatory-access-controls)
+    - [自主访问控制DAC(discretionary access controls)](#自主访问控制dacdiscretionary-access-controls)
+    - [杀毒](#杀毒)
+    - [沙盒(Sandbox)](#沙盒sandbox)
+
+<!-- /code_chunk_output -->
 
 # security
 > 没有绝对安全的系统: 有限的时间,资源无法应对无限种情况

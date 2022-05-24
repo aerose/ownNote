@@ -1,5 +1,18 @@
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [整数运算](#整数运算)
+  - [加法p62](#加法p62)
+  - [乘除法p67](#乘除法p67)
+- [浮点](#浮点)
+  - [基本](#基本)
+  - [整数转浮点P82:](#整数转浮点p82)
+  - [舍入P83](#舍入p83)
+  - [浮点运算P85](#浮点运算p85)
+
+<!-- /code_chunk_output -->
 
 # 整数运算
 ## 加法p62

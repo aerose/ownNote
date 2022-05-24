@@ -1,5 +1,25 @@
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [1 Principles of IO hardware](#1-principles-of-io-hardware)
+  - [1.1 IO设备](#11-io设备)
+    - [1.1.1 块设备(block device)](#111-块设备block-device)
+    - [1.1.2 字符设备(character device)](#112-字符设备character-device)
+  - [1.2 设备控制器(device controller)](#12-设备控制器device-controller)
+  - [1.3内存映射IO](#13内存映射io)
+    - [1.3.1 单独的IO空间和内存空间](#131-单独的io空间和内存空间)
+    - [1.3.2 内存映射IO(memory-mapped IO)](#132-内存映射iomemory-mapped-io)
+    - [1.3.3 混合方案](#133-混合方案)
+    - [1.3.4 如何工作](#134-如何工作)
+  - [1.4 直接存储器读取DMA(Direct Memory Access)](#14-直接存储器读取dmadirect-memory-access)
+  - [1.5 中断](#15-中断)
+    - [1.5.1 中断向量: 一个记录中断信息的表格](#151-中断向量-一个记录中断信息的表格)
+    - [1.5.2 中断发生时,在哪里保存当前状态信息?](#152-中断发生时在哪里保存当前状态信息)
+    - [1.5.3 精确中断和不精确中断](#153-精确中断和不精确中断)
+
+<!-- /code_chunk_output -->
 
 # 1 Principles of IO hardware
 

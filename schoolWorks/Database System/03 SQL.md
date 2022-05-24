@@ -1,6 +1,41 @@
 基本SQL
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [基本类型](#基本类型)
+- [基本模式](#基本模式)
+  - [关系定义](#关系定义)
+  - [更新](#更新)
+    - [insert](#insert)
+    - [delete](#delete)
+    - [drop table](#drop-table)
+    - [alter table](#alter-table)
+- [查询](#查询)
+  - [select](#select)
+  - [where](#where)
+  - [order by](#order-by)
+  - [集合运算](#集合运算)
+  - [空值](#空值)
+  - [聚集函数](#聚集函数)
+  - [group by](#group-by)
+  - [having](#having)
+  - [嵌套子查询](#嵌套子查询)
+    - [in/not in](#innot-in)
+    - [some/all](#someall)
+    - [exists/ not exists](#exists-not-exists)
+    - [unique/ not unique](#unique-not-unique)
+    - [from中的子查询](#from中的子查询)
+    - [with](#with)
+    - [标量子查询](#标量子查询)
+- [修改](#修改)
+  - [delete](#delete-1)
+  - [insert into](#insert-into)
+  - [updates](#updates)
+    - [case](#case)
+
+<!-- /code_chunk_output -->
 
 # 基本类型
 * char(n)

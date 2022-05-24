@@ -1,5 +1,26 @@
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [1 调度(Scheduling)](#1-调度scheduling)
+  - [1.1 何时调度](#11-何时调度)
+  - [1.2 怎么调度](#12-怎么调度)
+    - [1.2.1 抢占和非抢占(Preemptive & Non-Preemptive)](#121-抢占和非抢占preemptive-non-preemptive)
+    - [1.2.2 批处理调度(Batch Scheduling)](#122-批处理调度batch-scheduling)
+      - [1.2.2.1 各时间定义](#1221-各时间定义)
+      - [1.2.2.2 SJF(Short-Job-First)](#1222-sjfshort-job-first)
+    - [1.2.3 交互系统调度(Interactive System Scheduling)](#123-交互系统调度interactive-system-scheduling)
+      - [1.2.3.1 Round-Robin Scheduling](#1231-round-robin-scheduling)
+      - [1.2.3.2 基于优先级调度(Priority Scheduling)](#1232-基于优先级调度priority-scheduling)
+      - [1.2.3.3 保证式调度(Guaranteed Scheduling)](#1233-保证式调度guaranteed-scheduling)
+      - [1.2.3.4 随机调度(Lottery Scheduling)](#1234-随机调度lottery-scheduling)
+      - [1.2.3.5 FSS(Fair-Share Scheduling)](#1235-fssfair-share-scheduling)
+    - [1.2.4 实时调度(Real Time Scheduling)](#124-实时调度real-time-scheduling)
+  - [1.3 调度实现和目标策略分开(Policy Versus Mechanism)](#13-调度实现和目标策略分开policy-versus-mechanism)
+  - [1.4 Thread Scheduling](#14-thread-scheduling)
+
+<!-- /code_chunk_output -->
 
 # 1 调度(Scheduling)
 > 所有进程之间的关系

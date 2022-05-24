@@ -1,7 +1,23 @@
 事务
 
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [概念](#概念)
+- [简单事务模型](#简单事务模型)
+- [事务状态](#事务状态)
+- [如何并行事务](#如何并行事务)
+  - [调度(schedule)](#调度schedule)
+- [可串行化(serializable)](#可串行化serializable)
+  - [优先图(precedence graph)](#优先图precedence-graph)
+- [隔离性和原子性](#隔离性和原子性)
+  - [可恢复调度(Recoverable Schedules)](#可恢复调度recoverable-schedules)
+  - [无级联调度(Cascading Schedule):](#无级联调度cascading-schedule)
+- [事务隔离性级别](#事务隔离性级别)
+
+<!-- /code_chunk_output -->
 
 # 概念
 * 事务(transaction): 构成单一逻辑工作单元的操作集合

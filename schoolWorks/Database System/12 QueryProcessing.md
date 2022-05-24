@@ -1,7 +1,31 @@
 查询处理(query processing)
 
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [概述](#概述)
+- [查询代价的度量(measures of query cost)](#查询代价的度量measures-of-query-cost)
+- [选择运算(selection operation)](#选择运算selection-operation)
+  - [文件扫描(file scan)](#文件扫描file-scan)
+  - [索引扫描(index scan)](#索引扫描index-scan)
+  - [涉及比较的选择](#涉及比较的选择)
+  - [复杂选择实现](#复杂选择实现)
+- [排序(sort)](#排序sort)
+  - [外部排序归并算法(External Sort-Merge)](#外部排序归并算法external-sort-merge)
+    - [代价分析](#代价分析)
+- [连接运算⋈(Join Operation)](#连接运算join-operation)
+  - [嵌套循环连接(nested-loop join)](#嵌套循环连接nested-loop-join)
+  - [块嵌套循环连接(Block Nested-Loop Join)](#块嵌套循环连接block-nested-loop-join)
+  - [索引嵌套循环连接(Indexed Nested-Loop Join)](#索引嵌套循环连接indexed-nested-loop-join)
+  - [归并连接(Merge-Join)](#归并连接merge-join)
+  - [散列连接(Hash-Join)](#散列连接hash-join)
+- [表达式运算(Evaluation of Expressions)](#表达式运算evaluation-of-expressions)
+  - [物化(Materialization)](#物化materialization)
+  - [流水线(Pipelining)](#流水线pipelining)
+
+<!-- /code_chunk_output -->
 
 # 概述
 <img src="./pics/12/1.1查询.png" width="600"/>

@@ -1,5 +1,19 @@
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [classic IPC problem](#classic-ipc-problem)
+  - [哲学家就餐问题(Dining Philosophers Problem)](#哲学家就餐问题dining-philosophers-problem)
+    - [错误解法](#错误解法)
+    - [解法](#解法)
+  - [读者写者问题(The Readers and Writers problem)](#读者写者问题the-readers-and-writers-problem)
+    - [读者优先解法](#读者优先解法)
+  - [睡眠的理发师问题(Sleeping Barber Problem)](#睡眠的理发师问题sleeping-barber-problem)
+  - [司机售票员问题](#司机售票员问题)
+  - [总结](#总结)
+
+<!-- /code_chunk_output -->
 
 # classic IPC problem
 

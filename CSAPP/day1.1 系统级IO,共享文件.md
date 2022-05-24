@@ -1,5 +1,29 @@
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [系统级IO P624](#系统级io-p624)
+  - [Unix IO](#unix-io)
+    - [打开文件:](#打开文件)
+    - [改变文件位置:](#改变文件位置)
+    - [读写文件:](#读写文件)
+    - [关闭文件:](#关闭文件)
+  - [文件类型](#文件类型)
+    - [目录:](#目录)
+  - [RIO包 P626-P631](#rio包-p626-p631)
+  - [读取文件元数据](#读取文件元数据)
+    - [stat()](#stat)
+  - [读取目录内容](#读取目录内容)
+    - [opendir](#opendir)
+    - [readdir](#readdir)
+    - [closedir](#closedir)
+  - [共享文件](#共享文件)
+    - [内核已打开文件表示](#内核已打开文件表示)
+    - [共享](#共享)
+    - [IO重定向](#io重定向)
+
+<!-- /code_chunk_output -->
 # 系统级IO P624
 
 ****

@@ -1,7 +1,46 @@
 索引与散列
 
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [索引概念](#索引概念)
+- [顺序索引(order indices)](#顺序索引order-indices)
+  - [稠密索引(dense)和稀疏索引(sparse)](#稠密索引dense和稀疏索引sparse)
+  - [多级索引(Multilevel Index)](#多级索引multilevel-index)
+  - [索引更新](#索引更新)
+- [B+树索引文件](#b树索引文件)
+  - [结构](#结构)
+  - [更新](#更新)
+    - [插入](#插入)
+    - [删除](#删除)
+    - [不唯一的搜索码](#不唯一的搜索码)
+- [B+树扩展](#b树扩展)
+  - [B+树文件组织](#b树文件组织)
+  - [辅助索引和记录重定位(Record relocation and secondary indices)](#辅助索引和记录重定位record-relocation-and-secondary-indices)
+  - [字符串上的索引](#字符串上的索引)
+  - [批量加载和自底向上B+树构建(Bulk Loading and Bottom-Up Build)](#批量加载和自底向上b树构建bulk-loading-and-bottom-up-build)
+  - [B树索引文件](#b树索引文件-1)
+- [多码访问(Multiple-Key Access)](#多码访问multiple-key-access)
+  - [多个单码访问](#多个单码访问)
+  - [多码索引(Indices on Multiple Keys)](#多码索引indices-on-multiple-keys)
+  - [覆盖索引(Covering indices)](#覆盖索引covering-indices)
+- [静态散列(Static Hashing)](#静态散列static-hashing)
+  - [散列概念](#散列概念)
+  - [散列函数](#散列函数)
+  - [桶溢出处理](#桶溢出处理)
+  - [散列索引(Hashing Indices)](#散列索引hashing-indices)
+- [动态散列(Dynamic Hashing)](#动态散列dynamic-hashing)
+  - [静态散列的不足之处](#静态散列的不足之处)
+  - [数据结构](#数据结构)
+    - [可扩充散列(Extendable hashing)](#可扩充散列extendable-hashing)
+  - [查询和更新](#查询和更新)
+- [顺序查询和散列比较](#顺序查询和散列比较)
+- [位图索引(Bitmap Indices)](#位图索引bitmap-indices)
+- [SQL中索引定义](#sql中索引定义)
+
+<!-- /code_chunk_output -->
 
 # 索引概念
 * **搜索码**(search key): 在文件中查找记录的属性或属性集

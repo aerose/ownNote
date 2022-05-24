@@ -1,5 +1,38 @@
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [1 design issues](#1-design-issues)
+  - [1.1 减少缺页中断(Page Fault Reducing)](#11-减少缺页中断page-fault-reducing)
+    - [1.1.1 替换页属于哪个进程](#111-替换页属于哪个进程)
+      - [1.1.1.1 局部分配策略(Local)](#1111-局部分配策略local)
+      - [1.1.1.2 全局分配策略(Global)](#1112-全局分配策略global)
+      - [1.1.1.3 缺页中断率算法PFF(Page Fault Frequency)](#1113-缺页中断率算法pffpage-fault-frequency)
+    - [1.1.2 抖动(Thrashing)](#112-抖动thrashing)
+    - [1.1.3 清除策略(Clean Policy)](#113-清除策略clean-policy)
+  - [1.2 减少内存浪费(Reduce Waste Of Space)](#12-减少内存浪费reduce-waste-of-space)
+    - [1.2.1 调整页面大小](#121-调整页面大小)
+      - [1.2.1.1 最优页面大小](#1211-最优页面大小)
+  - [1.3 增加地址空间(Increase Address Space)](#13-增加地址空间increase-address-space)
+    - [1.3.1 分离指令空间和数据空间(Separate instruction and Data Space)](#131-分离指令空间和数据空间separate-instruction-and-data-space)
+  - [1.4 共享库(Shared Library)](#14-共享库shared-library)
+  - [1.5 内存映射文件(Memory mapped-files)](#15-内存映射文件memory-mapped-files)
+  - [1.6 针对应用的优化(Optimization for APP)](#16-针对应用的优化optimization-for-app)
+- [2 Implementation Issues](#2-implementation-issues)
+  - [2.1 不同时期的分页工作(time for paging)](#21-不同时期的分页工作time-for-paging)
+    - [2.1.1 进程生成(Process creation)](#211-进程生成process-creation)
+    - [2.1.2 进程运行(Process execution)](#212-进程运行process-execution)
+    - [2.1.3 缺页中断 (Page fault time)](#213-缺页中断-page-fault-time)
+    - [2.1.4 进程退出(Process termination time)](#214-进程退出process-termination-time)
+  - [2.2 缺页中断处理(Page Fault Handing)](#22-缺页中断处理page-fault-handing)
+  - [2.3 等待IO时的分页处理(Paging With IO)](#23-等待io时的分页处理paging-with-io)
+    - [2.3.1 Locking Pages](#231-locking-pages)
+    - [2.3.2 Backing Store](#232-backing-store)
+  - [2.4 (Separation of Policy and Mechanism)](#24-separation-of-policy-and-mechanism)
+  - [2.5 Segmentation](#25-segmentation)
+
+<!-- /code_chunk_output -->
 
 # 1 design issues
 > 内存管理的优化

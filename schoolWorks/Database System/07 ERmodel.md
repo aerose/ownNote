@@ -1,6 +1,32 @@
 数据库设计和ER模型
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [设计过程](#设计过程)
+  - [设计阶段](#设计阶段)
+  - [设计选择](#设计选择)
+- [实体(entity)-联系(relationship)模型](#实体entity-联系relationship模型)
+  - [实体集(entity sets)](#实体集entity-sets)
+  - [联系集(relationship sets)](#联系集relationship-sets)
+  - [属性(attributes)](#属性attributes)
+- [约束](#约束)
+  - [映射基数(Mapping Cardinality)](#映射基数mapping-cardinality)
+- [删除实体集的冗余属性(Redundant Attributes)](#删除实体集的冗余属性redundant-attributes)
+- [实体-联系图(E-R diagram)](#实体-联系图e-r-diagram)
+  - [角色(role)](#角色role)
+  - [映射基数(Cardinality Constraints)](#映射基数cardinality-constraints)
+  - [复杂属性](#复杂属性)
+  - [弱实体集(Weak Entity Sets)](#弱实体集weak-entity-sets)
+- [ER转换为关系模式](#er转换为关系模式)
+- [ER设计问题](#er设计问题)
+  - [实体集 or 属性](#实体集-or-属性)
+  - [实体集 or 联系集](#实体集-or-联系集)
+  - [二元 or n元联系集](#二元-or-n元联系集)
+- [UML](#uml)
+
+<!-- /code_chunk_output -->
 
 # 设计过程
 >构建数据库包括设计数据库模式,设计访问和更新数据的程序,设计控制数据访问的安全模式.

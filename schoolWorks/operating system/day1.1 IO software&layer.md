@@ -1,5 +1,39 @@
-[TOC]
 <font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [1 Principles of IO software](#1-principles-of-io-software)
+  - [1.1 IO软件目标](#11-io软件目标)
+    - [1.1.1 设备独立性(device independence)](#111-设备独立性device-independence)
+    - [1.1.2 统一命名(uniform naming)](#112-统一命名uniform-naming)
+    - [1.1.3 错误处理(error handling)](#113-错误处理error-handling)
+    - [1.1.4 同步(synchronous)异步(asynchronous)传输](#114-同步synchronous异步asynchronous传输)
+    - [1.1.5 缓冲(buffering)](#115-缓冲buffering)
+    - [1.1.6 共享设备和独占设备](#116-共享设备和独占设备)
+  - [1.2 三种实现IO的手段](#12-三种实现io的手段)
+    - [1.2.1 程序控制IO(programmed IO)](#121-程序控制ioprogrammed-io)
+    - [1.2.2 中断驱动IO](#122-中断驱动io)
+    - [1.2.3 DMA IO](#123-dma-io)
+- [2 IO software layer](#2-io-software-layer)
+  - [2.1 中断处理程序](#21-中断处理程序)
+  - [2.2 设备驱动程序(device driver)](#22-设备驱动程序device-driver)
+    - [2.2.1 功能和特性:](#221-功能和特性)
+    - [2.2.2 驱动程序运作过程](#222-驱动程序运作过程)
+  - [2.3 与设备无关的IO软件](#23-与设备无关的io软件)
+    - [2.3.1 设备驱动程序的统一接口](#231-设备驱动程序的统一接口)
+    - [2.3.2 缓冲](#232-缓冲)
+      - [2.3.2.1 用户空间的缓冲区](#2321-用户空间的缓冲区)
+      - [2.3.2.2 内核空间缓冲区](#2322-内核空间缓冲区)
+      - [2.3.2.3 多次缓冲降低性能](#2323-多次缓冲降低性能)
+    - [2.3.3 错误报告](#233-错误报告)
+    - [2.3.4 分配与释放专用设备](#234-分配与释放专用设备)
+    - [2.3.5 与设备无关的块大小](#235-与设备无关的块大小)
+  - [2.4 用户空间的IO软件](#24-用户空间的io软件)
+    - [2.4.1 假脱机(spooling)系统](#241-假脱机spooling系统)
+    - [2.4.2 守护进程(daemon)和假脱机目录](#242-守护进程daemon和假脱机目录)
+
+<!-- /code_chunk_output -->
 
 ```
 同步和异步:关注消息通信机制.发出调用后,同步等待调用返回结果,异步则不等待结果,被调用者通过他的方式通知调用者

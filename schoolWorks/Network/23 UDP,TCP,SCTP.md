@@ -1,8 +1,46 @@
-<font face = "Consolas">
 传输层: UDP、TCP 和 SCTP
 
 
-[TOC]
+<font face = "Consolas">
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [进程到进程的传递](#进程到进程的传递)
+  - [寻址](#寻址)
+  - [复用和分离](#复用和分离)
+  - [无连接服务和面向连接服务](#无连接服务和面向连接服务)
+  - [可靠服务和不可靠服务](#可靠服务和不可靠服务)
+  - [三种协议位置](#三种协议位置)
+- [用户数据报协议(UDP, User Datagram Protocol)](#用户数据报协议udp-user-datagram-protocol)
+  - [UDP熟知端口号](#udp熟知端口号)
+  - [用户数据报(user datagram)](#用户数据报user-datagram)
+  - [队列](#队列)
+- [传输控制协议(TCP, Transmission Control Protocol)](#传输控制协议tcp-transmission-control-protocol)
+  - [TCP提供的服务](#tcp提供的服务)
+    - [TCP熟知端口](#tcp熟知端口)
+    - [流传递服务](#流传递服务)
+  - [序号系统](#序号系统)
+  - [段(segment)](#段segment)
+  - [TCP连接](#tcp连接)
+    - [连接建立](#连接建立)
+    - [数据传输](#数据传输)
+    - [连接终止](#连接终止)
+  - [流量控制](#流量控制)
+  - [差错控制](#差错控制)
+  - [TCP情况](#tcp情况)
+- [拥塞控制](#拥塞控制)
+  - [拥塞控制与流量控制的关系](#拥塞控制与流量控制的关系)
+  - [拥塞窗口](#拥塞窗口)
+  - [拥塞策略](#拥塞策略)
+- [流控传输协议(SCTP, Stream Control Transmission Protocol)](#流控传输协议sctp-stream-control-transmission-protocol)
+  - [SCTP熟知端口](#sctp熟知端口)
+  - [多流(multistream)](#多流multistream)
+  - [多接口(multihoming)](#多接口multihoming)
+  - [特性](#特性)
+
+<!-- /code_chunk_output -->
+
 
 传输层: 负责报文的进程到进程传递
 所以,在OSI模型中,传输层头部必须包含一个称为服务点地址的地址类型,或在因特网和 TCP/IP协议族中的端口号或端口地址。
