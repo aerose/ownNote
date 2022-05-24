@@ -8,6 +8,7 @@
 - [win防火墙](#win防火墙)
 - [line_profiler](#line_profiler)
 - [git无法连接:修改为ssh连接](#git无法连接修改为ssh连接)
+- [git使用](#git使用)
 - [汇编](#汇编)
 - [gdb](#gdb)
 - [MLDL conda](#mldl-conda)
@@ -37,13 +38,27 @@
 `kernprof -l -v D:\vscodePython\draft\test1.py`
 
 ### git无法连接:修改为ssh连接
-```
+```txt
 git remote -v  //显示当前的地址
 git remote set-url origin git@github.com:youname/housename.git
 // 换为git@github.com
 git push -u origin master
 ```
 
+### git bash使用
+```txt
+# 提交
+git add .  # 将所有文件添加到本地暂存区
+git commit -m "msg"  # 提交暂存区中的内容到本地仓库 -m 提交信息
+git push origin master  # 提交到远程仓库的分支上
+
+# 更新
+git pull origin master  # 从远程仓库的分支上更新
+
+# 如仓库不同步
+法1: 先git pull同步以下再更新
+法2: git push origin master -f 强制覆盖（可能会造成远程仓库原有代码丢失）
+```
 
 ### 汇编
 * c：`D:\vscodeC\cfiles\draft>gcc -S 1.c`
