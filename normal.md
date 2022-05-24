@@ -7,9 +7,10 @@
 - [vmware共享文件夹](#vmware共享文件夹)
 - [win防火墙](#win防火墙)
 - [line_profiler](#line_profiler)
-- [git无法连接:修改为ssh连接](#git无法连接修改为ssh连接)
-- [git bash使用](#git-bash使用)
-- [git vscode提交](#git-vscode提交)
+- [git](#git)
+  - [git无法连接:修改为ssh连接](#git无法连接修改为ssh连接)
+  - [git bash使用](#git-bash使用)
+  - [git vscode提交](#git-vscode提交)
 - [汇编](#汇编)
 - [gdb](#gdb)
 - [MLDL conda](#mldl-conda)
@@ -37,7 +38,9 @@
 逐行解析代码函数用时,需在函数头用`@profile`修饰,后再cmd调用
 `kernprof -l -v D:\vscodePython\draft\test1.py`
 
-### git无法连接:修改为ssh连接
+
+### git
+#### git无法连接:修改为ssh连接
 ```txt
 git remote -v  //显示当前的地址
 git remote set-url origin git@github.com:youname/housename.git
@@ -45,7 +48,7 @@ git remote set-url origin git@github.com:youname/housename.git
 git push -u origin master
 ```
 
-### git bash使用
+#### git bash使用
 ```txt
 # 提交
 git add .  # 将所有文件添加到本地暂存区
@@ -60,7 +63,7 @@ git pull origin master  # 从远程仓库的分支上更新
 法2: git push origin master -f 强制覆盖（可能会造成远程仓库原有代码丢失）
 ```
 
-### git vscode提交
+#### git vscode提交
 `暂存所有更改` `提交` 输入提交信息 `推送`
 
 ### 汇编
